@@ -1,3 +1,5 @@
+rm -rf about.html projects
+mkdir projects
 cp index.html about.html
 cp index.html projects/font-in-the-environment.html
 cp index.html projects/grid-font.html
