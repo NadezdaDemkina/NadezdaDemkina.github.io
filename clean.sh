@@ -7,4 +7,5 @@ rm -rf service-worker.js
 rm -rf static
 rm -rf about.html
 rm -rf projects
+rm -rf gallery.html
 
