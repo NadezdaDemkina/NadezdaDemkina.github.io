@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.c04602b9.chunk.css",
-    "main.js": "/static/js/main.010c7e6a.chunk.js",
-    "main.js.map": "/static/js/main.010c7e6a.chunk.js.map",
+    "main.css": "/static/css/main.f30a5be6.chunk.css",
+    "main.js": "/static/js/main.ea28e0f1.chunk.js",
+    "main.js.map": "/static/js/main.ea28e0f1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.ac97cd4d.js",
     "runtime-main.js.map": "/static/js/runtime-main.ac97cd4d.js.map",
     "static/css/2.65e6c3a6.chunk.css": "/static/css/2.65e6c3a6.chunk.css",
-    "static/js/2.effdad24.chunk.js": "/static/js/2.effdad24.chunk.js",
-    "static/js/2.effdad24.chunk.js.map": "/static/js/2.effdad24.chunk.js.map",
+    "static/js/2.199f3f15.chunk.js": "/static/js/2.199f3f15.chunk.js",
+    "static/js/2.199f3f15.chunk.js.map": "/static/js/2.199f3f15.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1245ebcb5db3812e3202b060153b187d.js": "/precache-manifest.1245ebcb5db3812e3202b060153b187d.js",
+    "precache-manifest.1beabdffc95b20baf6c21603b3dd87c1.js": "/precache-manifest.1beabdffc95b20baf6c21603b3dd87c1.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.65e6c3a6.chunk.css.map": "/static/css/2.65e6c3a6.chunk.css.map",
-    "static/css/main.c04602b9.chunk.css.map": "/static/css/main.c04602b9.chunk.css.map",
-    "static/js/2.effdad24.chunk.js.LICENSE": "/static/js/2.effdad24.chunk.js.LICENSE",
+    "static/css/main.f30a5be6.chunk.css.map": "/static/css/main.f30a5be6.chunk.css.map",
+    "static/js/2.199f3f15.chunk.js.LICENSE": "/static/js/2.199f3f15.chunk.js.LICENSE",
     "static/media/085_expert_41.jpg": "/static/media/085_expert_41.e7b8785c.jpg",
     "static/media/20140708175054.jpg": "/static/media/20140708175054.8511126d.jpg",
     "static/media/20140708175102.jpg": "/static/media/20140708175102.14dccc41.jpg",
@@ -23,6 +23,7 @@
     "static/media/HERPEN_HCFS17_145JPG-XL.jpg": "/static/media/HERPEN_HCFS17_145JPG-XL.b24cc7cd.jpg",
     "static/media/HERPEN_HCFS17_279JPG-50.jpg": "/static/media/HERPEN_HCFS17_279JPG-50.956cd5b8.jpg",
     "static/media/HERPEN_HCFS17_407JPG-XL.jpg": "/static/media/HERPEN_HCFS17_407JPG-XL.24420f79.jpg",
+    "static/media/animation.mp4": "/static/media/animation.7d536fd6.mp4",
     "static/media/index.css": "/static/media/next.6d46adfa.svg",
     "static/media/buklet01.jpg": "/static/media/buklet01.edc5da96.jpg",
     "static/media/buklet02.jpg": "/static/media/buklet02.3fa6b60f.jpg",
@@ -84,15 +85,19 @@
     "static/media/plakati6.jpg": "/static/media/plakati6.e8a4687d.jpg",
     "static/media/plakati7.jpg": "/static/media/plakati7.9f7d3b0c.jpg",
     "static/media/plakati8.jpg": "/static/media/plakati8.2c70f51a.jpg",
+    "static/media/portfolio.pdf": "/static/media/portfolio.77fdf395.pdf",
     "static/media/titleImage.jpg": "/static/media/titleImage.c443c499.jpg",
     "static/media/video.mp4": "/static/media/video.bc9ab535.mp4",
-    "static/media/vizitka.jpg": "/static/media/vizitka.0347de28.jpg"
+    "static/media/vizitka.jpg": "/static/media/vizitka.0347de28.jpg",
+    "static/media/zal1.jpg": "/static/media/zal1.d6721220.jpg",
+    "static/media/zal2.jpg": "/static/media/zal2.de3dbc42.jpg",
+    "static/media/zal3.jpg": "/static/media/zal3.686ee3e8.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ac97cd4d.js",
     "static/css/2.65e6c3a6.chunk.css",
-    "static/js/2.effdad24.chunk.js",
-    "static/css/main.c04602b9.chunk.css",
-    "static/js/main.010c7e6a.chunk.js"
+    "static/js/2.199f3f15.chunk.js",
+    "static/css/main.f30a5be6.chunk.css",
+    "static/js/main.ea28e0f1.chunk.js"
   ]
 }
