@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirecting...</title>
+  <style>
+    html. body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    * {
+      box-sizing: border-box;
+      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Oxygen","Ubuntu","Cantarell","Fira Sans","Droid Sans","Helvetica Neue",sans-serif;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    a.link,
+    a.link:visited {
+      color: #0088ff;
+      text-decoration: none;
+      font-size: 1.6em;
+      margin-top: 1.6em;
+    }
+    a.link:hover,
+    a.link:active {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+    <div class="content">
+      <a href="" id="image-link">
+        <img width="1280" height="720" class="preview-image" id="preview-image" src="" alt="">
+      </a>
+      <a class="link" id="text-link" href="">Открыть видео</a>
+    </div>
+  </main>
+
+  <script>
+    var isMobile = {
+      Android: function() {
+        return /Android/i.test(navigator.userAgent);
+      },
+      BlackBerry: function() {
+        return /BlackBerry/i.test(navigator.userAgent);
+      },
+      iOS: function() {
+        return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+      },
+      Windows: function() {
+        return /IEMobile/i.test(navigator.userAgent);
+      },
+      any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Windows());
+      }
+    };
+
+    function getYTVideoId() {
+      return window.location.search.replace('?v=', ''); 
+    }
+
+    function getYTUrl() {
+      return 'https://www.youtube.com/watch?v=' + getYTVideoId();
+    }
+
+    function getYTPreviewUrl() {
+      var videoId = getYTVideoId();
+      return 'https://i.ytimg.com/vi/' + videoId + '/maxresdefault.jpg'
+    }
+
+    function getAppleDeepLink() {
+      var videoId = getYTVideoId();
+      return 'vnd.youtube://www.youtube.com/watch?v=' + videoId + '&amp;v=' + videoId;
+    }
+
+    function getAndroidDeepLink() {
+      var videoId = getYTVideoId();
+      return 'intent://www.youtube.com/watch?v=' + videoId + '#Intent;package=com.google.android.youtube;scheme=https;end'
+    }
+
+    function setupPage() {
+      document.getElementById('preview-image').src = getYTPreviewUrl();
+      document.getElementById('image-link').href = getYTUrl();
+      document.getElementById('text-link').href = getYTUrl();
+    }
+    setupPage();
+
+    if (isMobile.iOS()) {
+      window.location.href = getAppleDeepLink();
+    } else if (isMobile.Android()) {
+      window.location.href = getAndroidDeepLink();
+    } else {
+      window.location.href = getYTUrl();
+    }
+  </script>
+</body>
+</html>
