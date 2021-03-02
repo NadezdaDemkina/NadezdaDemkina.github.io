@@ -1,0 +1,1 @@
+cp -r ~/Projects/nadia-portfolio/build/* .
