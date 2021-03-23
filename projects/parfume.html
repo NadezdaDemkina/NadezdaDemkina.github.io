@@ -1,249 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Парфюм</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+    />
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-        }
-        body {
-            --scrollbar-width: 0px;
-            /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;*/
-            font-family: Manrope,sans-serif!important
-            color: rgba(0,0,0,0.4);
-            font-size: 18px;
+      * {
+        padding: 0;
+        margin: 0;
+      }
 
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        body.open-modal {
-            overflow: hidden;
-            padding-right: var(--scrollbar-width);
-        }
-        img {
-            display: block;
-            max-width: 100%;
-            cursor: pointer;
-            margin-top: 12px;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 48px 24px;
-        }
-        main {
-            position: relative;
-            margin: auto;
-            padding: 64px 24px;
-            max-width: 960px;
-        }
-        .image {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .light-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .light-box > img {
-            max-width: 90%;
-            max-height: 90%;
-        }
-        .light-box > .close-button {
-            position: absolute;
-            top: 0;
-            right: 0;
-        }
-        .light-box.closed {
-            display: none;
-        }
-        .close-button {
-            all: unset;
-            color: white;
-            margin: 20px;
-            font-size: 3rem; 
-            line-height: 3rem;
-            cursor: pointer;
-        }
+      body {
+        --scrollbar-width: 0px;
+        /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;*/
+        font-family: Manrope, sans-serif;
+        color: rgba(0, 0, 0, 0.4);
+        font-size: 18px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
 
-        h2 {
-            text-transform: uppercase;
-            color: black;
-            margin: 14px 0;
-        }
+      body.open-modal {
+        overflow: hidden;
+        padding-right: var(--scrollbar-width);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        cursor: pointer;
+        margin-top: 12px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px 24px;
+      }
+
+      main {
+        position: relative;
+        margin: auto;
+        padding: 64px 24px;
+        max-width: 960px;
+      }
+
+      .image {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .image span {
+        display: block;
+        text-align: right;
+        line-height: 1;
+      }
+
+      .light-box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .light-box > img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      .light-box > .close-button {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      .light-box.closed {
+        display: none;
+      }
+
+      .close-button {
+        all: unset;
+        color: white;
+        margin: 20px;
+        font-size: 3rem;
+        line-height: 3rem;
+        cursor: pointer;
+      }
+
+      h2 {
+        text-transform: uppercase;
+        color: black;
+        margin: 14px 0;
+      }
+
+      .grid#gallery2 {
+        grid-template-columns: repeat(3, 1fr);
+      }
     </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-md navbar-light"><a class="navbar-brand" href="/">Nadia Demkina</a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse justify-content-end" id="navbar"><div class="navbar-nav"><a class="nav-item nav-link" activeclassname="active" href="/">Home</a><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a><div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink"><a class="dropdown-item" href="/projects/font-in-the-environment">Шрифт в среде</a><a class="dropdown-item" href="/projects/materials-research">Исследование материалов</a><a class="dropdown-item" href="/projects/image-and-typography">Изображение и типографика</a><a class="dropdown-item" href="/projects/subject-and-font">Предмет и шрифт</a><a class="dropdown-item" href="/projects/grid-font">Создание шрифта по сетке</a><a class="dropdown-item" href="/projects/proverb-visualization">Визуализация пословиц</a><a class="dropdown-item" href="/projects/opart">Opart</a><a class="dropdown-item" href="/projects/between-the-lines">Between the lines</a><a class="dropdown-item" href="/">Парфюм</a></div></li><a class="nav-item nav-link" href="/about">Bio</a></div></div></nav>
+  </head>
 
-    <main>
-        <h2>Разработка логотипа</h2>
-
-        <section>
-            <img src="/images/parfume/logo/kursive.svg" alt="">
-            <img src="/images/parfume/logo/zipper.svg" alt="">
-        </section>
-
-        <h2>Копия</h2>
-        <section class="grid" id="gallery">
-            <div class="image">
-                <span>1.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo1.jpeg">
-                    <img src="/images/parfume/grid/photo1.jpeg" alt="">
-                </a>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="/">Nadia Demkina</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+        aria-controls="navbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" activeclassname="active" href="/"
+            >Home</a
+          >
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Projects</a
+            >
+            <div
+              class="dropdown-menu dropdown-menu-right"
+              aria-labelledby="navbarDropdownMenuLink"
+            >
+              <a class="dropdown-item" href="/projects/font-in-the-environment"
+                >Шрифт в среде</a
+              ><a class="dropdown-item" href="/projects/materials-research"
+                >Исследование материалов</a
+              ><a class="dropdown-item" href="/projects/image-and-typography"
+                >Изображение и типографика</a
+              ><a class="dropdown-item" href="/projects/subject-and-font"
+                >Предмет и шрифт</a
+              ><a class="dropdown-item" href="/projects/grid-font"
+                >Создание шрифта по сетке</a
+              ><a class="dropdown-item" href="/projects/proverb-visualization"
+                >Визуализация пословиц</a
+              ><a class="dropdown-item" href="/projects/opart">Opart</a
+              ><a class="dropdown-item" href="/projects/between-the-lines"
+                >Between the lines</a
+              ><a class="dropdown-item" href="/">Парфюм</a>
             </div>
-            <div class="image">
-                <span>2.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo2.jpeg">
-                    <img src="/images/parfume/grid/photo2.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>3.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo3.jpeg">
-                    <img src="/images/parfume/grid/photo3.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>4.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo4.jpeg">
-                    <img src="/images/parfume/grid/photo4.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>5.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo5.jpeg">
-                    <img src="/images/parfume/grid/photo5.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>6.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo6.jpeg">
-                    <img src="/images/parfume/grid/photo6.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>7.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo1.jpeg">
-                    <img src="/images/parfume/grid/photo7.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>8.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo8.jpeg">
-                    <img src="/images/parfume/grid/photo8.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>9.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo9.jpeg">
-                    <img src="/images/parfume/grid/photo9.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>10.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo10.jpeg">
-                    <img src="/images/parfume/grid/photo10.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>11.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo11.jpeg">
-                    <img src="/images/parfume/grid/photo11.jpeg" alt="">
-                </a>
-            </div>
-            <div class="image">
-                <span>12.</span>
-                <a class='gallery-item' href="/images/parfume/grid/photo12.jpeg">
-                    <img src="/images/parfume/grid/photo12.jpeg" alt="">
-                </a>
-            </div>
-        </section>
-        <div id="light-box" class='light-box closed'>
-            <button class="close-button">&times;</button>
+          </li>
+          <a class="nav-item nav-link" href="/about">Bio</a>
         </div>
+      </div>
+    </nav>
+    <main>
+      <h2>Разработка логотипа</h2>
+      <section>
+        <img src="/images/parfume/logo/kursive.svg" alt="" />
+        <img src="/images/parfume/logo/zipper.svg" alt="" />
+      </section>
+      <img src="/images/parfume/logo/logo-.jpg" alt="" style="width: 50%; margin: 0 auto;">
+      <section class="grid" style="grid-template-columns: repeat(2, 1fr);">
+          <img src="/images/parfume/logo/logo-15.jpg" alt="">
+          <img src="/images/parfume/logo/logo-16.jpg" alt="">
+          <img src="/images/parfume/logo/logo-17.jpg" alt="">
+          <img src="/images/parfume/logo/logo-18.jpg" alt="">
+      </section>
+      <img src="/images/parfume/logo/logo-19.jpg" alt="" style="width: 50%; margin-left: auto;">
+
+      <h2>Клаузуры</h2>
+      <section class="grid" id="gallery2">
+        <div class="image">
+          <span>19.</span>
+          <a href="/images/parfume/grid/klzr-12.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-12.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>20.</span>
+          <a href="/images/parfume/grid/klzr-18.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-18.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>21.</span>
+          <a href="/images/parfume/grid/klzr-17.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-17.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>22.</span>
+          <a href="/images/parfume/grid/klzr-14.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-14.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>23.</span>
+          <a href="/images/parfume/grid/klzr-15.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-15.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>24.</span>
+          <a href="/images/parfume/grid/klzr-16.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-16.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>25.</span>
+          <a href="/images/parfume/grid/klzr-19.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-19.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>26.</span>
+          <a href="/images/parfume/grid/klzr-20.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-20.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>27.</span>
+          <a href="/images/parfume/grid/klzr-21.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-21.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>28.</span>
+          <a href="/images/parfume/grid/klzr-22.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-22.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>29.</span>
+          <a href="/images/parfume/grid/klzr-23.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-23.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>30.</span>
+          <a href="/images/parfume/grid/klzr-24.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-24.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>31.</span>
+          <a href="/images/parfume/grid/klzr-25.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-25.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>32.</span>
+          <a href="/images/parfume/grid/klzr-26.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-26.jpg" alt=""
+          /></a>
+        </div>
+        <div class="image">
+          <span>33.</span>
+          <a href="/images/parfume/grid/klzr-27.jpg" class="gallery-item"
+            ><img src="/images/parfume/grid/klzr-27.jpg" alt=""
+          /></a>
+        </div>
+      </section>
+        <br><br>
+      <h2>Флакон #1</h2>
+      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
+        <a href="/images/parfume/grid/bottle1-1.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle1-1.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/bottle1-2.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle1-2.jpg" alt="">
+        </a>
+      </section>
+      <br><br>
+      <h2>Флакон #2</h2>
+      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
+        <a href="/images/parfume/grid/bottle2-1.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle2-1.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/bottle2-2.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle2-2.jpg" alt="">
+        </a>
+      </section>
+      <br><br>
+      <h2>Флакон #3</h2>
+      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
+        
+        <a href="/images/parfume/grid/bottle3-2.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle3-2.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/bottle3-3.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle3-3.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/bottle3-4.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle3-4.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/bottle3-1.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/bottle3-1.jpg" alt="">
+        </a>
+      </section>
+      <br><br>
+      <h2>Плакаты</h2>
+      <section class="grid" style="grid-template-columns: repeat(3, 1fr)">
+       
+        <a href="/images/parfume/grid/poster2.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/poster2.jpg" alt="">
+        </a>
+        <a href="/images/parfume/grid/poster3.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/poster3.jpg" alt="">
+        </a>
+         <a href="/images/parfume/grid/poster1.jpg" class="gallery-item">
+            <img src="/images/parfume/grid/poster1.jpg" alt="">
+        </a>
+      </section>
+      
+    <!-- <br>
+      <br>
+      <h2>Копия</h2>
+      <section class="grid" id="gallery">
+        <div class="image">
+          <span>1.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo1.jpeg">
+            <img src="/images/parfume/grid/photo1.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>2.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo2.jpeg">
+            <img src="/images/parfume/grid/photo2.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>3.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo3.jpeg">
+            <img src="/images/parfume/grid/photo3.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>4.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo4.jpeg">
+            <img src="/images/parfume/grid/photo4.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>5.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo5.jpeg">
+            <img src="/images/parfume/grid/photo5.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>6.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo6.jpeg">
+            <img src="/images/parfume/grid/photo6.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>7.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo1.jpeg">
+            <img src="/images/parfume/grid/photo7.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>8.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo8.jpeg">
+            <img src="/images/parfume/grid/photo8.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>9.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo9.jpeg">
+            <img src="/images/parfume/grid/photo9.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>10.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo10.jpeg">
+            <img src="/images/parfume/grid/photo10.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>11.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo11.jpeg">
+            <img src="/images/parfume/grid/photo11.jpeg" alt="" />
+          </a>
+        </div>
+        <div class="image">
+          <span>12.</span>
+          <a class="gallery-item" href="/images/parfume/grid/photo12.jpeg">
+            <img src="/images/parfume/grid/photo12.jpeg" alt="" />
+          </a>
+        </div>
+      </section>-->
+      <div id="light-box" class="light-box closed">
+        <button class="close-button">&times;</button>
+      </div> 
     </main>
     <script>
-        function getScrollbarWidth() {
-          // Creating invisible container
-          const outer = document.createElement('div');
-          outer.style.visibility = 'hidden';
-          outer.style.overflow = 'scroll'; // forcing scrollbar to appear
-          outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
-          document.body.appendChild(outer);
+      function getScrollbarWidth() {
+        // Creating invisible container
+        const outer = document.createElement("div");
+        outer.style.visibility = "hidden";
+        outer.style.overflow = "scroll"; // forcing scrollbar to appear
+        outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+        document.body.appendChild(outer);
+        // Creating inner element and placing it in the container
+        const inner = document.createElement("div");
+        outer.appendChild(inner);
+        // Calculating difference between container's full width and the child width
+        const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+        // Removing temporary elements from the DOM
+        outer.parentNode.removeChild(outer);
+        return scrollbarWidth;
+      }
+      document.body.style.setProperty(
+        "--scrollbar-width",
+        getScrollbarWidth() + "px"
+      );
+      Array.from(document.querySelectorAll(".gallery-item")).forEach((item) => {
+        item.addEventListener("click", (e) => {
+          e.preventDefault();
+          open(e.target.href || e.target.src);
+          return false;
+        });
+      });
 
-          // Creating inner element and placing it in the container
-          const inner = document.createElement('div');
-          outer.appendChild(inner);
-
-          // Calculating difference between container's full width and the child width
-          const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-
-          // Removing temporary elements from the DOM
-          outer.parentNode.removeChild(outer);
-
-          return scrollbarWidth;
-        };
-
-        document.body.style.setProperty(
-            '--scrollbar-width',
-            getScrollbarWidth() + 'px'
+      function open(src) {
+        window.location.hash = encodeURIComponent(
+          src.split("/images/parfume/grid/")[1]
         );
+        document.body.classList.add("open-modal");
+        document.getElementById("light-box").classList.remove("closed");
+        const box = document.getElementById("light-box");
+        const img = document.createElement("img");
+        img.src = src;
+        box.appendChild(img);
+      }
 
-        Array.from(document.querySelectorAll('.gallery-item')).forEach(item => {
-            item.addEventListener('click', e => {
-                e.preventDefault();
-                open(e.target.href || e.target.src);
-                return false;
-            })
-        });
-
-        function open(src) {
-            window.location.hash = encodeURIComponent(src.split('/images/parfume/grid/')[1]);
-            document.body.classList.add('open-modal');
-            document.getElementById('light-box').classList.remove('closed');
-            const box = document.getElementById('light-box');
-            const img = document.createElement('img');
-            img.src = src;
-            box.appendChild(img);
+      function close() {
+        var topPos =
+          window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop ||
+          0;
+        window.location.hash = "";
+        document.documentElement.scrollTop = topPos;
+        document.body.classList.remove("open-modal");
+        document.getElementById("light-box").classList.add("closed");
+        document
+          .getElementById("light-box")
+          .removeChild(document.querySelector("#light-box > img"));
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") close();
+      });
+      document.querySelector(".close-button").addEventListener("click", close);
+      document.querySelector("#light-box").addEventListener("click", (e) => {
+        if (e.target.id === "light-box") {
+          close();
         }
-
-        function close() {
-            window.location.hash = '';
-            document.body.classList.remove('open-modal');
-            document.getElementById('light-box').classList.add('closed');
-            document.getElementById('light-box').removeChild(document.querySelector('#light-box > img'));
-        }
-
-        document.addEventListener('keydown', e => {
-            if (e.key === 'Escape') close();
-        });
-
-        document.querySelector('.close-button').addEventListener('click', close);
-
-        document.querySelector('#light-box').addEventListener('click', e => {
-            if (e.target.id === 'light-box') {
-                close();
-            }
-        });
-        if (window.location.hash && window.location.hash.slice(1)) {
-            open('/images/parfume/grid/' + decodeURIComponent(window.location.hash.slice(1)));
-        }
+      });
+      if (window.location.hash && window.location.hash.slice(1)) {
+        open(
+          "/images/parfume/grid/" +
+            decodeURIComponent(window.location.hash.slice(1))
+        );
+      }
     </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
