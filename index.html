@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Парфюм</title>
+    <title>Пулково</title>
+    <meta name="description" content="">
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
@@ -12,7 +14,7 @@
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@200;300;400;500;600;700;800&display=swap"
     />
     <style>
       * {
@@ -23,8 +25,8 @@
       body {
         --scrollbar-width: 0px;
         /*font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;*/
-        font-family: Manrope, sans-serif;
-        color: rgba(0, 0, 0, 0.4);
+        font-family: Roboto, sans-serif;
+        color: #000;
         font-size: 18px;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -45,10 +47,10 @@
       .grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 12px 24px;
+        gap: 40px;
       }
 
-      main {
+      body >  main {
         position: relative;
         margin: auto;
         padding: 64px 24px;
@@ -111,12 +113,50 @@
       .grid#gallery2 {
         grid-template-columns: repeat(3, 1fr);
       }
+
+      .grid-columns-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-columns-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .list {
+        list-style-type: none;
+      }
+
+      .logo {
+        width: 140px;
+      }
+
+      .icons-title {
+        width: 300px;
+      }
+
+      .num-wrap {
+        display: flex;
+        align-items: flex-end; 
+      }
+      .num-wrap span {
+        margin-left: 16px;
+        margin-right: 16px;
+      }
+
+      p {
+        margin: 20px 0;
+      }
+
+      article {
+        margin-bottom: 120px;
+      }
+
     </style>
   </head>
 
   <body>
     <nav class="navbar navbar-expand-md navbar-light">
-      <a class="navbar-brand" href="/">Nadia Demkina</a>
+      <a class="navbar-brand" href="/"><img src="/images/pulkovo/logo.svg" alt="" class="logo"></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -163,287 +203,175 @@
               ><a class="dropdown-item" href="/projects/opart">Opart</a
               ><a class="dropdown-item" href="/projects/between-the-lines"
                 >Between the lines</a
-              ><a class="dropdown-item" href="/">Парфюм</a>
+              ><a class="dropdown-item" href="/projects/parfume">Парфюм</a>
+              <a class="dropdown-item" href="/">Пулково</a>
             </div>
           </li>
           <a class="nav-item nav-link" href="/about">Bio</a>
         </div>
       </div>
     </nav>
+
+
     <main>
-      <h2>Разработка логотипа</h2>
-      <section>
-        <img src="/images/parfume/logo/kursive.svg" alt="" />
-        <img src="/images/parfume/logo/zipper.svg" alt="" />
-      </section>
-      <img src="/images/parfume/logo/logo-.jpg" alt="" style="width: 50%; margin: 0 auto;">
-      <section class="grid" style="grid-template-columns: repeat(2, 1fr);">
-          <img src="/images/parfume/logo/logo-15.jpg" alt="">
-          <img src="/images/parfume/logo/logo-16.jpg" alt="">
-          <img src="/images/parfume/logo/logo-17.jpg" alt="">
-          <img src="/images/parfume/logo/logo-18.jpg" alt="">
-      </section>
-      <img src="/images/parfume/logo/logo-19.jpg" alt="" style="width: 50%; margin-left: auto;">
+      <article>
+        <section class="grid grid-columns-2">    
+          <img src="/images/pulkovo/reference.jpg" alt="">
+          <div>
+            <img src="/images/pulkovo/setka.svg" alt="">
+            <p>разработка построена на <i>сетке,</i> в основу которой легла <i>архитектура</i> аэропорта &laquo;Пулково&raquo;</p>
+          </div>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+        <p>Примеры использования</p> 
+        <section class="grid grid-columns-2">
+          <img src="/images/pulkovo/example3.jpg" alt="">  
+          <img src="/images/pulkovo/example2.jpg" alt="">
+          <img src="/images/pulkovo/example4.jpg" alt="">
+          <img src="/images/pulkovo/example1.jpg" alt="">
+        </section>
+        <br>
+        <br>
+        <br>
 
-      <h2>Клаузуры</h2>
-      <section class="grid" id="gallery2">
-        <div class="image">
-          <span>19.</span>
-          <a href="/images/parfume/grid/k1.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k1.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>20.</span>
-          <a href="/images/parfume/grid/k2.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k2.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>21.</span>
-          <a href="/images/parfume/grid/k3.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k3.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>22.</span>
-          <a href="/images/parfume/grid/k4.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k4.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>23.</span>
-          <a href="/images/parfume/grid/k5.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k5.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>24.</span>
-          <a href="/images/parfume/grid/k6.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k6.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>25.</span>
-          <a href="/images/parfume/grid/k7.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k7.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>26.</span>
-          <a href="/images/parfume/grid/k8.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k8.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>27.</span>
-          <a href="/images/parfume/grid/k9.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k9.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>28.</span>
-          <a href="/images/parfume/grid/k10.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k10.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>29.</span>
-          <a href="/images/parfume/grid/k11.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k11.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>30.</span>
-          <a href="/images/parfume/grid/k12.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k12.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>31.</span>
-          <a href="/images/parfume/grid/k13.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k13.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>32.</span>
-          <a href="/images/parfume/grid/k14.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k14.jpg" alt=""
-          /></a>
-        </div>
-        <div class="image">
-          <span>33.</span>
-          <a href="/images/parfume/grid/k15.jpg" class="gallery-item"
-            ><img src="/images/parfume/grid/k15.jpg" alt=""
-          /></a>
-        </div>
-      </section>
-        <br><br>
-      <h2>Флакон #1</h2>
-      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
-        <a href="/images/parfume/grid/bottle1-1.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle1-1.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/bottle1-2.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle1-2.jpg" alt="">
-        </a>
-      </section>
-      <br><br>
-      <h2>Флакон #2</h2>
-      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
-        <a href="/images/parfume/grid/bottle2-1.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle2-1.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/bottle2-2.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle2-2.jpg" alt="">
-        </a>
-      </section>
-      <br><br>
-      <h2>Флакон #3</h2>
-      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
-        
-        <a href="/images/parfume/grid/bottle3-2.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle3-2.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/bottle3-3.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle3-3.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/bottle3-4.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle3-4.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/bottle3-1.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/bottle3-1.jpg" alt="">
-        </a>
-      </section>
-      <br><br>
-
-      <h2>Упаковка</h2>
-      <section style="grid-template-columns: repeat(2, 1fr)" class="grid">
-        
-        <a href="/images/parfume/grid/pack1.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/pack1.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/pack2.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/pack2.jpg" alt="">
-        </a>
-      </section>
-      <br><br>
+      </article>
 
 
-      <h2>Плакаты</h2>
-      <section class="grid" style="grid-template-columns: repeat(3, 1fr)">
-         <a href="/images/parfume/grid/plakat02.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat02.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat03.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat03.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat04.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat04.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat05.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat05.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat06.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat06.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat07.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat07.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat08.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat08.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat09.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat09.jpg" alt="">
-        </a>
-        <a href="/images/parfume/grid/plakat10.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/plakat10.jpg" alt="">
-        </a>
+      <article>
+        <header>
+          <img src="/images/pulkovo/icons_title.svg" alt="Иконки" class="icons-title">
+        </header>
+        <main>
+          <p>Разработка иконок для навигации в аэропорту <br/>с учетом стилистики интерьера</p>
+          <section class="grid grid-columns-3">
+            <img style="max-width: 80%" src="/images/pulkovo/icon1.svg" alt="">
+            <img style="max-width: 80%" src="/images/pulkovo/icon2.svg" alt="">
+            <img style="max-width: 80%" src="/images/pulkovo/icon3.svg" alt="">
+          </section>
+          <br>  
+          <br>  
+          <br>  
+          <br>  
+          <br>  
+          <br>  
+          <br>  
+          <p>Для построения иконок было принято решение объединить четыре изначальные сетки</p>
+          <br>  
+          <br> 
 
-      </section>
-      <br><br>
-      <section class="grid" style="grid-template-columns: repeat(1, 1fr)">
-        <a href="/images/parfume/grid/podacha.jpg" class="gallery-item">
-            <img src="/images/parfume/grid/podacha.jpg" alt="">
-        </a>
-      </section>
-    <!-- <br>
-      <br>
-      <h2>Копия</h2>
-      <section class="grid" id="gallery">
-        <div class="image">
-          <span>1.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo1.jpeg">
-            <img src="/images/parfume/grid/photo1.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>2.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo2.jpeg">
-            <img src="/images/parfume/grid/photo2.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>3.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo3.jpeg">
-            <img src="/images/parfume/grid/photo3.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>4.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo4.jpeg">
-            <img src="/images/parfume/grid/photo4.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>5.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo5.jpeg">
-            <img src="/images/parfume/grid/photo5.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>6.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo6.jpeg">
-            <img src="/images/parfume/grid/photo6.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>7.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo1.jpeg">
-            <img src="/images/parfume/grid/photo7.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>8.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo8.jpeg">
-            <img src="/images/parfume/grid/photo8.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>9.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo9.jpeg">
-            <img src="/images/parfume/grid/photo9.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>10.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo10.jpeg">
-            <img src="/images/parfume/grid/photo10.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>11.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo11.jpeg">
-            <img src="/images/parfume/grid/photo11.jpeg" alt="" />
-          </a>
-        </div>
-        <div class="image">
-          <span>12.</span>
-          <a class="gallery-item" href="/images/parfume/grid/photo12.jpeg">
-            <img src="/images/parfume/grid/photo12.jpeg" alt="" />
-          </a>
-        </div>
-      </section>-->
+          <ul class="list">
+            <li>автобус</li>
+            <li>выдача багажа</li>
+            <li>рестораны</li>
+            <li>парковка</li>
+            <li>бизнес-центр</li>
+            <li>гостиница</li>
+            <li>туалеты</li>
+            <li>камера хранения</li>
+            <li>стол находок</li>
+            <li>магазины</li>
+            <li>такси</li>
+            <li>ветеринарный контроль</li>
+          </ul>
+          <br>  
+          <br>  
+          <br>  
+
+          <section class="grid grid-columns-3">
+            <div>
+              <img src="/images/pulkovo/wc1-1.svg" alt="">
+            </div>
+            <div class="num-wrap">
+              <img src="/images/pulkovo/wc1-2.svg" alt="">
+              <span>01</span>
+            </div>
+            <div>
+              <p>Туалеты</p>
+            </div>
+
+            <div>
+              <img src="/images/pulkovo/wc2-1.svg" alt="">
+            </div>
+            <div class="num-wrap">
+              <img src="/images/pulkovo/wc2-2.svg" alt="">
+              <span>02</span>
+            </div>
+            <div></div>
+            
+            <div class="num-wrap">
+              <img src="/images/pulkovo/locker.svg" alt="">
+              <span>03</span>
+            </div>
+            <div>
+              <p>Камера хранения</p>
+            </div>
+            <div>
+            </div>
+
+            <div class="num-wrap">
+              <img src="/images/pulkovo/lost-n-find.svg" alt="">
+              <span>04</span>
+            </div>
+            <div>
+              <p>Стол находок</p>
+            </div>
+            <div>
+            </div>
+
+
+            <div class="num-wrap">
+              <img src="/images/pulkovo/luggage.svg" alt="">
+              <span>05</span>
+            </div>
+            <div>
+              <p>Выдача багажа</p>
+            </div>
+            <div>
+            </div>
+
+
+
+            <div class="num-wrap">
+              <img src="/images/pulkovo/office.svg" alt="">
+              <span>06</span>
+            </div>
+            <div>
+              <p>Бизнес-центр</p>
+            </div>
+            <div>
+            </div>
+
+
+
+            <div class="num-wrap">
+              <img src="/images/pulkovo/public-transport.svg" alt="">
+              <span>07</span>
+            </div>
+            <div>
+              <p>Общественный транспорт</p>
+            </div>
+            <div>
+            </div>
+            <div class="num-wrap">
+              <img src="/images/pulkovo/cat1.svg" alt="">
+              <span>08</span>
+            </div>
+            <div>
+              <p>Ветеринарный контроль</p>
+            </div>
+            <div></div>
+
+            <div class="num-wrap">
+              <img src="/images/pulkovo/cat2.svg" alt="">
+              <span>09</span>
+            </div>
+          </section>
+        </main>
+      </article>
+
       <div id="light-box" class="light-box closed">
         <button class="close-button">&times;</button>
       </div> 
